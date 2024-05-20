@@ -9,6 +9,7 @@ public class CharacterMove : MonoBehaviour
     public Rigidbody controller; // reference to the character controller component
     public Rigidbody Player;
     public WolfAnimation wolfAnimation;
+    public SceneController sceneController;
     public GameObject Compass;
     public GameObject Dist;
 
@@ -41,6 +42,14 @@ public class CharacterMove : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             speed = 7f;
+        }
+        // Check for pause input
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (sceneController.isPaused)
+                sceneController.ResumeGame();
+            else
+                sceneController.PauseGame();
         }
     }
 }
