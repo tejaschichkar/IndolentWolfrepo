@@ -58,5 +58,9 @@ public class WolfAnimation : MonoBehaviour
     {
         wAnimator.SetTrigger("Breath");
     }
+    public void Eat()
+    {
+        wAnimator.SetTrigger("Eat");
+    }
 }
     

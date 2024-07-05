@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
@@ -13,6 +14,11 @@ public class SceneController : MonoBehaviour
     {
         // Get the current scene index when the script starts
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex == 1)
+        {
+            StartCoroutine(LoadSceneAfterDelay(2, 75f)); // 75 seconds = 1 minute and 15 seconds
+        }
     }
 
     public void GoToPlayScene()
@@ -74,5 +80,11 @@ public class SceneController : MonoBehaviour
         // If the game was saved while paused, pause it again
         if (savedIsPaused)
             PauseGame();
+    }
+
+    private IEnumerator LoadSceneAfterDelay(int sceneIndex, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneIndex);
     }
 }

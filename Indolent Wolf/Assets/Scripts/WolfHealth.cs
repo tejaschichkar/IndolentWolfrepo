@@ -9,9 +9,11 @@ public class WolfHealth : MonoBehaviour
     public Text WolfH;
     public Animator Wanime;
     public InstructionScript canvas;
+    public WolfAnimation wolfanimation;
     private bool hasBeenCalled = false;
     public CharacterMove move;
     public GameObject CheckPoint1;
+    public Slider slider;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,8 @@ public class WolfHealth : MonoBehaviour
         if (col.collider.tag == "Rabbit")
         {
             WHealth += 5;
+            wolfanimation.Eat();
+            slider.value = WHealth;
         }
         if (WHealth == 30 && !hasBeenCalled)
         {
@@ -61,5 +65,9 @@ public class WolfHealth : MonoBehaviour
             move.controller.constraints = RigidbodyConstraints.FreezeAll;
             move.Player.constraints = RigidbodyConstraints.FreezeAll;
         }
+    }
+    public void OnSliderChanged(float value)
+    {
+        WolfH.text = value.ToString();
     }
 }
