@@ -62,5 +62,9 @@ public class WolfAnimation : MonoBehaviour
     {
         wAnimator.SetTrigger("Eat");
     }
+    public void StopWalk()
+    {
+        wAnimator.ResetTrigger("Walk");
+    }
 }
     

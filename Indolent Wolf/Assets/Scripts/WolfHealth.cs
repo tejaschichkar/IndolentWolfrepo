@@ -48,6 +48,7 @@ public class WolfHealth : MonoBehaviour
         if (col.collider.tag == "Rabbit")
         {
             WHealth += 5;
+            wolfanimation.StopWalk();
             wolfanimation.Eat();
             slider.value = WHealth;
         }
