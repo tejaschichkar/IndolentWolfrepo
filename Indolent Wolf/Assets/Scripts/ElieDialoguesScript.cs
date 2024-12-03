@@ -24,11 +24,11 @@ public class ElieDialoguesScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Wolf"))
+        if (col.gameObject.CompareTag("Player"))
         {
             canvas.Invoke("EnableElie1", 1f);
             Destroy(CheckPoint2, 2f);
-            Destroy(Trigger, 47f);
+            Destroy(Trigger, 46.7f);
             move.Player.constraints = RigidbodyConstraints.FreezeAll;
 
             StartCoroutine(UnfreezePlayerAfterDelay());
@@ -44,7 +44,7 @@ public class ElieDialoguesScript : MonoBehaviour
         move.Player.constraints = RigidbodyConstraints.None;
 
         // You may want to set specific constraints based on your needs
-        move.Player.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
+        move.Player.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 
     }
 }

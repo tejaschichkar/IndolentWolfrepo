@@ -21,14 +21,14 @@ public class BearAnimation : MonoBehaviour
         transform.LookAt(player.transform.position);
         if(bAnimator != null)
         {
-            if(Input.GetKeyDown(KeyCode.P))
+            /*if(Input.GetKeyDown(KeyCode.P))
             {
                 bAnimator.SetTrigger("SLEEP");
             }
             if(Input.GetKeyDown(KeyCode.O))
             {
                 bAnimator.SetTrigger("IDLE");
-            }
+            }*/
         }
     }
 }

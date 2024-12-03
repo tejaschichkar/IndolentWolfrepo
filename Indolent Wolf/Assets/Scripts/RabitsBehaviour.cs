@@ -44,7 +44,7 @@ public class RabitsBehaviour : MonoBehaviour
             Debug.Log("Animation Triggered as " + this.name + " collided with " + col.collider.name);
             transform.Rotate(0f, 115f, 0f);
         }
-        if (col.gameObject.CompareTag("Wolf"))
+        if (col.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
         }

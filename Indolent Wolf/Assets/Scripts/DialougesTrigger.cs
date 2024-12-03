@@ -31,7 +31,7 @@ public class DialougesTrigger : MonoBehaviour
     }
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Wolf"))
+        if (col.gameObject.CompareTag("Player"))
         {
             canvas.EnableDText();
             canvas.Invoke("EnableEText", 10f);

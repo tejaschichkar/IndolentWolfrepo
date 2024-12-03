@@ -13,6 +13,7 @@ public class InstructionScript : MonoBehaviour
     public Text BenDialogue2;
     public Text ElieDialogue3;
     public Text Mission1;
+    public Text BearDialogue1;
     public Text Last;
 
     void Start () 
@@ -28,6 +29,7 @@ public class InstructionScript : MonoBehaviour
         BenDialogue2.enabled = false;
         ElieDialogue3.enabled = false;
         Mission1.enabled = false;
+        BearDialogue1.enabled = false;
         Last.enabled = false;
         Invoke("EnableText", 1f);//invoke after 1 seconds
     }
@@ -85,6 +87,10 @@ public class InstructionScript : MonoBehaviour
         if(Mission1.enabled == true)
         {
             Invoke("DisableM1", 5f);
+        }
+        if(BearDialogue1.enabled == true)
+        {
+            Invoke("DisableBear1", 7f);
         }
     }
     public void EnableText()
@@ -174,6 +180,14 @@ public class InstructionScript : MonoBehaviour
     public void DisableBen2()
     {
         BenDialogue2.enabled = false;
+    }
+    public void EnableBear1()
+    {
+        BearDialogue1.enabled = true;
+    }
+    public void DisableBear1()
+    {
+        BearDialogue1.enabled = false;
     }
     public void EnableLast()
     {

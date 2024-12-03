@@ -8,12 +8,13 @@ public class FogController : MonoBehaviour
     public Camera fogCamera;
     public Transform foggyArea; // The transform representing the center of the foggy area
 
-    private bool isInFoggyArea = false;
+    public bool isInFoggyArea = false;
 
     private void Start()
     {
         // Make sure the fog camera is initially disabled
         fogCamera.gameObject.SetActive(false);
+        RenderSettings.fog = false;
     }
 
     private void Update()
@@ -85,6 +86,17 @@ public class FogController : MonoBehaviour
         }
 
         RenderSettings.fogDensity = targetFogDensity;
+    }
+
+    public void SwitchToMainCamera()
+    {
+        // Disable fog camera and enable main camera
+        fogCamera.gameObject.SetActive(false);
+        mainCamera.gameObject.SetActive(true);
+
+        // Reset fog settings for the main camera
+        RenderSettings.fog = false;
+        RenderSettings.fogDensity = 0f;
     }
 
     // Helper method to convert hexadecimal color code to Unity Color

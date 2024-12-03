@@ -20,7 +20,7 @@ public class WolfAnimation : MonoBehaviour
             {
                 Walk();
             }
-            if(Input.GetKeyDown(KeyCode.Z))
+            if(Input.GetKeyDown(KeyCode.S))
             {
                 Sit();
             }

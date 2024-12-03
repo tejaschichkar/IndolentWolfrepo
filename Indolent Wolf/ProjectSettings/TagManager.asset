@@ -17,6 +17,8 @@ TagManager:
   - FxTemporaire
   - CheckPoint1
   - Rock
+  - Rest
+  - MazeCheckPoints
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - Water
   - UI
   - Light
-  - 
-  - 
+  - Player
+  - Legs
   - 
   - 
   - 
